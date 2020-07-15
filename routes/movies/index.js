@@ -1,8 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
-const routes = require('./controller');
+const {
+    getAllMovies,
+    getMovieByName,
+    movieUpload,
+    movieUpdate,
+    movieDelete,
+} = require('./controller');
 
-router.post('/upload', routes.movieUpload);
+
+router.get('/allmovies', getAllMovies);
+router.get('/:title', getMovieByName)
+router.post('/upload', movieUpload);
+router.put('/:id', movieUpdate);
+router.delete('/:id', movieDelete);
 
 module.exports = router;

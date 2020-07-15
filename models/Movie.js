@@ -28,6 +28,8 @@ const MovieSchema = new mongoose.Schema({
         required: true,
         default: new Date().toLocaleString(),
     },
+},{
+    timestamps:false
 });
 
 const Movie = mongoose.model('movie', MovieSchema);
