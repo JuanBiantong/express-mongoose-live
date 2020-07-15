@@ -1,13 +1,20 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
-    name: String,
-    email: {
+const MovieSchema = new mongoose.Schema({
+    title: {
         type: String,
         required: true,
         unique: true,
     },
-    password: {
+    description: {
+        type: String,
+        required: true,
+    },
+    genre: {
+        type: String,
+        required: true,
+    },
+    release_year: {
         type: String,
         required: true,
     },
@@ -23,6 +30,6 @@ const UserSchema = new mongoose.Schema({
     },
 });
 
-const User = mongoose.model('users', UserSchema);
+const Movie = mongoose.model('movie', MovieSchema);
 
-module.exports = User;
+module.exports = Movie;

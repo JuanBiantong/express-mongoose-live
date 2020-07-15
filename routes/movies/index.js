@@ -3,6 +3,6 @@ const router = express.Router();
 
 const routes = require('./controller');
 
-router.post('/', routes.userRegistration);
+router.post('/upload', routes.movieUpload);
 
 module.exports = router;

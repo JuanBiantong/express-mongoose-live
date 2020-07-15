@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-const { MONGODB_URI_LOCAL } = require('./environment');
+const { MONGODB_URI_LOCAL, MONGODB_URI_LIVE} = require('./environment');
 
-mongoose.connect(MONGODB_URI_LOCAL, {
+mongoose.connect(MONGODB_URI_LOCAL || MONGODB_URI_LIVE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
